@@ -22,6 +22,7 @@ if ( ! defined( 'MOS_JPORTAL_SETTINGS' ) ) {
 $mos_jportal_option = get_option( 'mos_jportal_option' );
 $plugin = plugin_basename(MOS_JPORTAL_FILE); 
 require_once ( plugin_dir_path( MOS_JPORTAL_FILE ) . 'mos-jportal-functions.php' );
+require_once ( plugin_dir_path( MOS_JPORTAL_FILE ) . 'mos-jportal-hooks.php' );
 require_once ( plugin_dir_path( MOS_JPORTAL_FILE ) . 'mos-jportal-settings.php' );
 require_once ( plugin_dir_path( MOS_JPORTAL_FILE ) . 'mos-jportal-post-type.php' );
 require_once ( plugin_dir_path( MOS_JPORTAL_FILE ) . 'mos-jportal-taxonomy.php' );

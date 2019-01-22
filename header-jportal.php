@@ -5,9 +5,18 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="author" content="Md. Mostak Shahid">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="<?php echo plugins_url( 'css/bootstrap.min.css', __FILE__ )?>">
+	<link rel="stylesheet" href="<?php echo plugins_url( 'css/dashboard.css', __FILE__ )?>">
+
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+	<script src="<?php echo  plugins_url( 'js/popper.min.js', __FILE__ )?>"></script>
+	<script src="<?php echo  plugins_url( 'js/bootstrap.min.js', __FILE__ )?>"></script>
+
 </head>
 <body>
+	<header id="jportal-header"><?php do_action( 'jportal_header' ); ?></header>
+	<main id="jportal-content">
+		<div class="container">
+			<div class="content-wrapper">
+
+	

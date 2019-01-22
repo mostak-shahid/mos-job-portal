@@ -34,3 +34,4 @@ function mos_jportal_add_page($page_slug, $page_title, $page_content, $page_temp
         add_post_meta( $page_id, '_wp_page_template', $page_template );
     }
 }
+
