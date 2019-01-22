@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: Mos Plugin
+Plugin Name: Mos Job Portal
 Description: Base of future plugin
 Version: 0.0.1
 Author: Md. Mostak Shahid
@@ -17,14 +17,20 @@ if ( ! defined( 'MOS_JPORTAL_FILE' ) ) {
 }
 // Define MOS_JPORTAL_SETTINGS.
 if ( ! defined( 'MOS_JPORTAL_SETTINGS' ) ) {
-  //define( 'MOS_JPORTAL_SETTINGS', admin_url('/edit.php?post_type=post_type&page=plugin_settings') );
   define( 'MOS_JPORTAL_SETTINGS', admin_url('/options-general.php?page=mos_jportal_settings') );
 }
 $mos_jportal_option = get_option( 'mos_jportal_option' );
 $plugin = plugin_basename(MOS_JPORTAL_FILE); 
 require_once ( plugin_dir_path( MOS_JPORTAL_FILE ) . 'mos-jportal-functions.php' );
 require_once ( plugin_dir_path( MOS_JPORTAL_FILE ) . 'mos-jportal-settings.php' );
-//require_once ( plugin_dir_path( MOS_JPORTAL_FILE ) . 'custom-settings.php' );
+require_once ( plugin_dir_path( MOS_JPORTAL_FILE ) . 'mos-jportal-post-type.php' );
+require_once ( plugin_dir_path( MOS_JPORTAL_FILE ) . 'mos-jportal-taxonomy.php' );
+
+require_once( plugin_dir_path( MOS_JPORTAL_FILE ) . 'plugins/metabox/init.php'); 
+require_once( plugin_dir_path( MOS_JPORTAL_FILE ) . 'plugins/metabox/custom-cmb2-fields.php'); 
+require_once( plugin_dir_path( MOS_JPORTAL_FILE ) . 'plugins/metabox/extensions/cmb-field-sorter/cmb-field-sorter.php');
+require_once( plugin_dir_path( MOS_JPORTAL_FILE ) . 'plugins/metabox/extensions/cmb2-conditionals/cmb2-conditionals.php');
+require_once( plugin_dir_path( MOS_JPORTAL_FILE ) . 'mos-jportal-metaboxes.php'); 
 
 require_once('plugins/update/plugin-update-checker.php');
 $pluginInit = Puc_v4_Factory::buildUpdateChecker(
