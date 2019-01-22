@@ -27,9 +27,9 @@ require_once ( plugin_dir_path( MOS_JPORTAL_FILE ) . 'mos-jportal-post-type.php'
 require_once ( plugin_dir_path( MOS_JPORTAL_FILE ) . 'mos-jportal-taxonomy.php' );
 
 require_once( plugin_dir_path( MOS_JPORTAL_FILE ) . 'plugins/metabox/init.php'); 
-require_once( plugin_dir_path( MOS_JPORTAL_FILE ) . 'plugins/metabox/custom-cmb2-fields.php'); 
-require_once( plugin_dir_path( MOS_JPORTAL_FILE ) . 'plugins/metabox/extensions/cmb-field-sorter/cmb-field-sorter.php');
-require_once( plugin_dir_path( MOS_JPORTAL_FILE ) . 'plugins/metabox/extensions/cmb2-conditionals/cmb2-conditionals.php');
+// require_once( plugin_dir_path( MOS_JPORTAL_FILE ) . 'plugins/metabox/custom-cmb2-fields.php'); 
+// require_once( plugin_dir_path( MOS_JPORTAL_FILE ) . 'plugins/metabox/extensions/cmb-field-sorter/cmb-field-sorter.php');
+// require_once( plugin_dir_path( MOS_JPORTAL_FILE ) . 'plugins/metabox/extensions/cmb2-conditionals/cmb2-conditionals.php');
 require_once( plugin_dir_path( MOS_JPORTAL_FILE ) . 'mos-jportal-metaboxes.php'); 
 
 require_once('plugins/update/plugin-update-checker.php');

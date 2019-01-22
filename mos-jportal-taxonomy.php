@@ -4,8 +4,9 @@ add_action( 'init', 'mos_jportal_taxonomies', 0 );
 
 // create two taxonomies, categories and tags for the post type "book"
 function mos_jportal_taxonomies() {
-	// Add new taxonomy, make it hierarchical (like categories)
-	$labels = array(
+
+
+	$slabels = array(
 		'name'              => _x( 'Functional Categories', 'taxonomy general name', 'textdomain' ),
 		'singular_name'     => _x( 'Functional Category', 'taxonomy singular name', 'textdomain' ),
 		'search_items'      => __( 'Search Functional Categories', 'textdomain' ),
@@ -18,16 +19,17 @@ function mos_jportal_taxonomies() {
 		'new_item_name'     => __( 'New Functional Category Name', 'textdomain' ),
 		'menu_name'         => __( 'Functional Categories', 'textdomain' ),
 	);
-	$args = array(
+	$sargs = array(
 		'hierarchical'      => true,
-		'labels'            => $labels,
+		'labels'            => $slabels,
 		'show_ui'           => true,
 		'show_admin_column' => true,
 		'query_var'         => true,
-		'rewrite'           => array( 'slug' => 'job-fcategory' ),
+		'rewrite'           => array( 'slug' => 'job-fucategory' ),
 	);
-	register_taxonomy( 'job-fcategory', array( 'job' ), $args );
-	$labels = array(
+	register_taxonomy( 'job-fucategory', array( 'job' ), $sargs );
+
+	$slabels = array(
 		'name'              => _x( 'Skill Categories', 'taxonomy general name', 'textdomain' ),
 		'singular_name'     => _x( 'Skill Category', 'taxonomy singular name', 'textdomain' ),
 		'search_items'      => __( 'Search Skill Categories', 'textdomain' ),
@@ -40,15 +42,15 @@ function mos_jportal_taxonomies() {
 		'new_item_name'     => __( 'New Skill Category Name', 'textdomain' ),
 		'menu_name'         => __( 'Skill Categories', 'textdomain' ),
 	);
-	$args = array(
+	$sargs = array(
 		'hierarchical'      => true,
-		'labels'            => $labels,
+		'labels'            => $slabels,
 		'show_ui'           => true,
 		'show_admin_column' => true,
 		'query_var'         => true,
 		'rewrite'           => array( 'slug' => 'job-scategory' ),
 	);
-	register_taxonomy( 'job-scategory', array( 'job' ), $args );
+	register_taxonomy( 'job-scategory', array( 'job' ), $sargs );
 
 	// Add new taxonomy, NOT hierarchical (like tags)
 	$labels = array(
@@ -77,8 +79,8 @@ function mos_jportal_taxonomies() {
 		'show_admin_column'     => true,
 		'update_count_callback' => '_update_post_term_count',
 		'query_var'             => true,
-		'rewrite'               => array( 'slug' => 'tag' ),
+		'rewrite'               => array( 'slug' => 'job-tag' ),
 	);
 
-	register_taxonomy( 'tag', 'portfolio', $args );
+	register_taxonomy( 'job-tag', 'job', $args );
 }
