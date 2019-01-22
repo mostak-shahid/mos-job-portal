@@ -17,7 +17,7 @@ if ( ! defined( 'MOS_JPORTAL_FILE' ) ) {
 }
 // Define MOS_JPORTAL_SETTINGS.
 if ( ! defined( 'MOS_JPORTAL_SETTINGS' ) ) {
-  define( 'MOS_JPORTAL_SETTINGS', admin_url('/options-general.php?page=mos_jportal_settings') );
+  define( 'MOS_JPORTAL_SETTINGS', admin_url('/edit.php?post_type=job&page=mos_jportal_settings') );
 }
 $mos_jportal_option = get_option( 'mos_jportal_option' );
 $plugin = plugin_basename(MOS_JPORTAL_FILE); 
@@ -66,3 +66,16 @@ function mos_jportal_settings_link($links) {
   return $links; 
 } 
 add_filter("plugin_action_links_$plugin", 'mos_jportal_settings_link' );
+
+// function page_template_name() {
+//   echo get_page_template() . is_page( 'welcome' );  
+// }
+// add_action('wp_head', 'page_template_name');
+
+add_filter( 'page_template', 'mos_jportal_page_template' );
+function mos_jportal_page_template( $page_template ) {
+    if ( is_page( 'welcome' ) ) {
+        $page_template = dirname( __FILE__ ) . '/page-welcome.php';
+    }
+    return $page_template;
+}
