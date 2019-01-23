@@ -65,8 +65,13 @@ if (!function_exists('bd_jobs_content')) {
 		if ( $args == 'welcome') :
 		?>
 		<div class="card">
-			<div class="card-header bg-secondary text-white">Header</div>
-			<div class="card-body">Content</div> 
+			<div class="card-header bg-secondary text-white">My Stats</div>
+			<div class="card-body">
+				<div class="bg-info text-white welcome-text">
+					<h4>Welcome to your Mybdjobs account!</h4>
+					<p>Here you can check your detailed states like Companies viewed my Resume, Online Application, Emailed Resume, Shortlisted Jobs etc. Beside My Stats in Edit Resume option you can find all features at a glance to add/update.</p>
+				</div>
+			</div> 
 		</div>	
 		<?php
 		endif;
