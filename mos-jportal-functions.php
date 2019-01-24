@@ -17,7 +17,7 @@ $employee = add_role(
         'read'			=> true
     )
 );
-mos_jportal_add_page('welcome', 'Welcome', '[jportal_welcome]', 'default');
+mos_jportal_add_page('job-portal', 'Job Portal', '', 'default');
 function mos_jportal_add_page($page_slug, $page_title, $page_content, $page_template) {
     $page = get_page_by_path( $page_slug , OBJECT );
     //var_dump($page);

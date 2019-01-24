@@ -9,15 +9,16 @@ if (!is_user_logged_in()) {
 	//var_dump($user_roles[0]);
 }
 require_once ( plugin_dir_path( MOS_JPORTAL_FILE ) . 'header-jportal.php' );
+$page_slug = ($_GET['page']) ? $_GET['page'] : 'welcome';
 ?>
 
-				<div class="jportal-content">
+				<div class="page-content <?php echo $page_slug ?>-content jportal-<?php echo $page_slug ?>">
 					<div class="row">
 						<div class="col-md-3">
-							<?php do_action( 'jportal_sidebar', 'jportal' ); ?>
+							<?php do_action( 'jportal_sidebar', $page_slug ); ?>
 						</div>
 						<div class="col-md-9">
-							<?php do_action( 'jportal_content', 'jportal' ); ?>
+							<?php do_action( 'jportal_content', $page_slug ); ?>
 						</div>
 					</div>
 				</div>

@@ -75,8 +75,8 @@ add_filter("plugin_action_links_$plugin", 'mos_jportal_settings_link' );
 
 add_filter( 'page_template', 'mos_jportal_page_template' );
 function mos_jportal_page_template( $page_template ) {
-    if ( is_page( 'welcome' ) ) {
-        $page_template = dirname( __FILE__ ) . '/page-welcome.php';
+    if ( is_page( 'job-portal' ) ) {
+        $page_template = dirname( __FILE__ ) . '/page-jportal.php';
     }
     return $page_template;
 }

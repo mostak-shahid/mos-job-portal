@@ -11,7 +11,7 @@ if (!function_exists('bd_jobs_header')) {
 						<div class="col-lg-6">
 							<div class="dib">
 								<div class="text-left">
-									<ul class="list-inline">
+									<ul class="list-inline mb0">
 										<li class="list-inline-item"><a href="http://jobs.bdjobs.com/jobsearch.asp" class="jobs" target="_blank">Jobs</a></li>
 										<li class="list-inline-item"><a href="javascript:void();" class="mybdjobs active">My Bdjobs</a></li>
 										<li class="list-inline-item"><a href="http://bdjobs.com/m_d_l/" class="training" target="_blank">Training</a></li>
