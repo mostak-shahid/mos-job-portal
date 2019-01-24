@@ -81,15 +81,32 @@ add_action('jportal_content', 'jportal_edit_profile_content', 10, 1 );
 if (!function_exists('jportal_edit_profile_content')) {
 	function jportal_edit_profile_content($args) {
 		if ( $args == 'edit-profile') :
+			global $form_err;
 		?>
 		<div class="card">
 			<div class="card-header bg-secondary text-white <?php echo $args ?>-header">Edit Profile</div>
 			<div class="card-body">
 				<div class="<?php echo $args ?>-text">
-					<form method="POST" action="">							
-						<input type="text" name="first_name" value=""/>
+					<form method="POST" action="">	
+					<div class="row">
+						<div class="col-lg-6">
+							<div class="form-group">
+								<label class="control-label" for="first_name">First Name</label>
+								<input type="text" class="form-control" id="first_name" name="first_name" placeholder="First Name" required>
+							</div>
+							<div class="form-group">
+								<label class="control-label" for="last_name">Last Name</label>
+								<input type="text" class="form-control" id="last_name" name="last_name" placeholder="Last Name">
+							</div>
+							<div class="form-group has-error has-feedback">
+								<label class="control-label" for="email">Email</label>
+								<input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
+								<span class="fa fa-remove form-control-feedback"></span>
+							</div>							
+						</div>
+					</div>						
+						<button  type="submit" class="btn btn-primary">Submit</button>
 						<input type="hidden" name="jportal_profile_edit" value="<?php echo wp_create_nonce('jportal-profile-edit-nonce'); ?>"/>
-						<input type="submit" value="Submit"/>
 					</form>					
 				</div>
 			</div> 
