@@ -1,3 +1,10 @@
+<?php 
+if ($_SERVER['REQUEST_METHOD'] == "POST") {
+	foreach ($_POST as $field => $value) {
+		echo "$"."_POST['"."$field"."']"." == '$value'<br>";
+	}
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

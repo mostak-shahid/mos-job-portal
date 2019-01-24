@@ -43,21 +43,21 @@ $pluginInit = Puc_v4_Factory::buildUpdateChecker(
 
 register_activation_hook(MOS_JPORTAL_FILE, 'mos_jportal_activate');
 add_action('admin_init', 'mos_jportal_redirect');
- 
+
 function mos_jportal_activate() {
-    $mos_jportal_option = array();
+  $mos_jportal_option = array();
     // $mos_jportal_option['mos_login_type'] = 'basic';
     // update_option( 'mos_jportal_option', $mos_jportal_option, false );
-    add_option('mos_jportal_do_activation_redirect', true);
+  add_option('mos_jportal_do_activation_redirect', true);
 }
- 
+
 function mos_jportal_redirect() {
-    if (get_option('mos_jportal_do_activation_redirect', false)) {
-        delete_option('mos_jportal_do_activation_redirect');
-        if(!isset($_GET['activate-multi'])){
-            wp_safe_redirect(MOS_JPORTAL_SETTINGS);
-        }
+  if (get_option('mos_jportal_do_activation_redirect', false)) {
+    delete_option('mos_jportal_do_activation_redirect');
+    if(!isset($_GET['activate-multi'])){
+      wp_safe_redirect(MOS_JPORTAL_SETTINGS);
     }
+  }
 }
 
 // Add settings link on plugin page
@@ -68,15 +68,11 @@ function mos_jportal_settings_link($links) {
 } 
 add_filter("plugin_action_links_$plugin", 'mos_jportal_settings_link' );
 
-// function page_template_name() {
-//   echo get_page_template() . is_page( 'welcome' );  
-// }
-// add_action('wp_head', 'page_template_name');
 
 add_filter( 'page_template', 'mos_jportal_page_template' );
 function mos_jportal_page_template( $page_template ) {
-    if ( is_page( 'job-portal' ) ) {
-        $page_template = dirname( __FILE__ ) . '/page-jportal.php';
-    }
-    return $page_template;
+  if ( is_page( 'job-portal' ) ) {
+    $page_template = dirname( __FILE__ ) . '/page-jportal.php';
+  }
+  return $page_template;
 }
