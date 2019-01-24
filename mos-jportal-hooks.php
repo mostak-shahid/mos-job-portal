@@ -47,7 +47,7 @@ if (!function_exists('bd_jobs_sidebar')) {
 		?>
 		<nav class="side-menu">
 			<div class="list-group">
-				<a href="#" class="list-group-item list-group-item-action">Home</a>
+				<a href="<?php echo home_url( '/job-portal/' ) ?>" class="list-group-item list-group-item-action">Home</a>
 			</div>
 			<div class="list-group">
 				<a href="#" class="list-group-item list-group-item-action">View Resume</a>
@@ -63,17 +63,19 @@ add_action('jportal_content', 'jportal_welcome_content', 10, 1 );
 if (!function_exists('jportal_welcome_content')) {
 	function jportal_welcome_content($args) {
 		if ( $args == 'welcome') :
-		?>
-		<div class="card">
-			<div class="card-header bg-secondary text-white <?php echo $args ?>-header">My Stats</div>
-			<div class="card-body">
-				<div class="bg-info text-white <?php echo $args ?>-text">
-					<h4>Welcome to your Mybdjobs account!</h4>
-					<p>Here you can check your detailed states like Companies viewed my Resume, Online Application, Emailed Resume, Shortlisted Jobs etc. Beside My Stats in Edit Resume option you can find all features at a glance to add/update.</p>
-				</div>
-			</div> 
-		</div>	
-		<?php
+			?>
+			<div class="card">
+				<div class="card-header bg-secondary text-white <?php echo $args ?>-header">My Stats</div>
+				<div class="card-body">
+					<div class="<?php echo $args ?>-text">
+						<div class="wrapper-info bg-info text-white"> 	
+							<h4>Welcome to your Mybdjobs account!</h4>
+							<p>Here you can check your detailed states like Companies viewed my Resume, Online Application, Emailed Resume, Shortlisted Jobs etc. Beside My Stats in Edit Resume option you can find all features at a glance to add/update.</p>
+						</div>
+					</div>
+				</div> 
+			</div>	
+			<?php
 		endif;
 	}
 }
@@ -82,36 +84,118 @@ if (!function_exists('jportal_edit_profile_content')) {
 	function jportal_edit_profile_content($args) {
 		if ( $args == 'edit-profile') :
 			global $form_err;
-		?>
-		<div class="card">
-			<div class="card-header bg-secondary text-white <?php echo $args ?>-header">Edit Profile</div>
-			<div class="card-body">
-				<div class="<?php echo $args ?>-text">
-					<form method="POST" action="">	
-					<div class="row">
-						<div class="col-lg-6">
-							<div class="form-group">
-								<label class="control-label" for="first_name">First Name</label>
-								<input type="text" class="form-control" id="first_name" name="first_name" placeholder="First Name" required>
-							</div>
-							<div class="form-group">
-								<label class="control-label" for="last_name">Last Name</label>
-								<input type="text" class="form-control" id="last_name" name="last_name" placeholder="Last Name">
-							</div>
-							<div class="form-group has-error has-feedback">
-								<label class="control-label" for="email">Email</label>
-								<input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
-								<span class="fa fa-remove form-control-feedback"></span>
-							</div>							
+			?>
+			<div class="card">
+				<div class="card-header bg-secondary text-white <?php echo $args ?>-header">Edit Profile</div>
+				<div class="card-body">
+					<div class="<?php echo $args ?>-text">
+						<div class="wrapper-info bg-info text-white">
+							<p>Here you can edit your resume in five different steps (Personal, Education/ Training, Employment, Other Information and Photograph). To enrich your resume provide authentic information.</p>
 						</div>
-					</div>						
-						<button  type="submit" class="btn btn-primary">Submit</button>
-						<input type="hidden" name="jportal_profile_edit" value="<?php echo wp_create_nonce('jportal-profile-edit-nonce'); ?>"/>
-					</form>					
-				</div>
-			</div> 
-		</div>	
-		<?php
+						<div class="form-tabs">
+							<div class="row">
+								<div class="col personal-tab active">
+									<a href="#" class="wrapper">
+										<i class="fa fa-user"></i>
+										<span>Personal</span>								
+									</a>	
+								</div>
+								<div class="col education-tab">
+									<a href="#" class="wrapper">
+										<i class="fa fa-graduation-cap"></i>
+										<span>Education/Training</span>								
+									</a>	
+								</div>
+								<div class="col employment-tab">
+									<a href="#" class="wrapper">
+										<i class="fa fa-briefcase"></i>
+										<span>Employment</span>								
+									</a>	
+								</div>
+								<div class="col employment-tab">
+									<a href="#" class="wrapper">
+										<i class="fa fa-list-ul"></i>
+										<span>Other Information</span>								
+									</a>	
+								</div>
+								<div class="col employment-tab">
+									<a href="#" class="wrapper">
+										<i class="fa fa-camera-retro"></i>
+										<span>Photograph</span>								
+									</a>	
+								</div>
+							</div>
+						</div>
+						<form method="POST" action="">
+							<div id="personal-tab-accordion" class="accordion">
+								<div class="card">
+									<div class="card-header" id="headingOne">
+										<h5 class="mb-0">
+											<a href="javascript:void(0)" class="" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+												Personal Details 
+											</a>
+										</h5>
+									</div>
+
+									<div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#personal-tab-accordion">
+										<div class="card-body">
+											<div class="row">
+												<div class="col-lg-6">
+													<div class="form-group">
+														<label class="control-label" for="first_name">First Name</label>
+														<input type="text" class="form-control" id="first_name" name="first_name" placeholder="First Name" required>
+													</div>
+													<div class="form-group">
+														<label class="control-label" for="last_name">Last Name</label>
+														<input type="text" class="form-control" id="last_name" name="last_name" placeholder="Last Name">
+													</div>
+													<div class="form-group has-error has-feedback">
+														<label class="control-label" for="email">Email</label>
+														<input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
+														<span class="fa fa-remove form-control-feedback"></span>
+													</div>							
+													<button  type="submit" class="btn btn-primary">Submit</button>
+													<input type="hidden" name="jportal_profile_edit" value="<?php echo wp_create_nonce('jportal-profile-edit-nonce'); ?>"/>
+												</div>
+											</div>	
+										</div>
+									</div>
+								</div>
+								<div class="card">
+									<div class="card-header" id="headingTwo">
+										<h5 class="mb-0">
+											<a href="javascript:void(0)" class="collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+												Collapsible Group Item #2
+											</a>
+										</h5>
+									</div>
+									<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#personal-tab-accordion">
+										<div class="card-body">
+											Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+										</div>
+									</div>
+								</div>
+								<div class="card">
+									<div class="card-header" id="headingThree">
+										<h5 class="mb-0">
+											<a href="javascript:void(0)" class="collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+												Collapsible Group Item #3
+											</a>
+										</h5>
+									</div>
+									<div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#personal-tab-accordion">
+										<div class="card-body">
+											Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+										</div>
+									</div>
+								</div>
+							</div>	
+
+						</form>					
+					</div>
+				</div> 
+			</div>	
+			<?php
 		endif;
 	}
 }
