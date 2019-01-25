@@ -139,6 +139,7 @@ if (!function_exists('jportal_edit_profile_content')) {
 
 									<div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#personal-tab-accordion">
 										<div class="card-body">
+											<div class="edit-btn-wrapper text-right"><button class="btn btn-light btn-sm"><i class="fa fa-edit"></i> Edit</button></div>
 											<div class="row">
 												<div class="col-lg-6">
 													<div class="form-group">
@@ -149,15 +150,90 @@ if (!function_exists('jportal_edit_profile_content')) {
 														<label class="control-label" for="last_name">Last Name</label>
 														<input type="text" class="form-control" id="last_name" name="last_name" placeholder="Last Name">
 													</div>
-													<div class="form-group has-error has-feedback">
+													<div class="form-group">
+														<label class="control-label" for="last_name">Father's Name</label>
+														<input type="text" class="form-control" id="father_name" name="father_name" placeholder="Father's Name">
+													</div>
+													<div class="form-group">
+														<label class="control-label" for="last_name">Mother's Name</label>
+														<input type="text" class="form-control" id="mother_name" name="mother_name" placeholder="Mother's Name">
+													</div>
+													<div class="form-group">
+														<label class="control-label" for="last_name">Date of Birth</label>
+														<input type="date" class="form-control" id="dob" name="last_name" placeholder="Date of Birth ">
+													</div>													
+													<div class="form-group">
+														<label for="gender">Gender</label>
+														<select class="form-control" id="gender" name="gender">
+															<option value=''>Select</option>
+															<option>Male</option>
+															<option>Female</option>
+															<option>Others</option>
+														</select>
+													</div>		
+													<div class="form-group">
+														<label class="control-label" for="last_name">Religion</label>
+														<input type="text" class="form-control" id="religion" name="religion" placeholder="Religion">
+													</div>									
+													<div class="form-group">
+														<label for="marital">Marital Status</label>
+														<select class="form-control" id="marital" name="marital">
+			                                                <option value="">Select</option>
+			                                                <option>Unmarried</option>
+			                                                <option> Married </option>
+			                                                <option> Single </option>
+														</select>
+													</div>
+												</div>
+												<div class="col-lg-6">
+													<div class="form-group">
+														<label class="control-label" for="nationality">Nationality</label>
+														<input type="text" class="form-control" id="nationality" name="nationality" placeholder="Nationality">
+													</div>
+													<div class="form-group">
+														<label class="control-label" for="nid">National Id No</label>
+														<input type="text" class="form-control" id="nid" name="nid" placeholder="National Id No">
+													</div>
+													<div class="form-group">
+														<label class="control-label" for="passport">Passport No</label>
+														<input type="text" class="form-control" id="passport" name="passport" placeholder="Passport No">
+													</div>
+													<div class="form-group">
+														<label class="control-label" for="phone">Phone</label>
+														<input type="tel" class="form-control-plaintext" id="phone" name="phone" placeholder="Phone" value="+8801234567890"  readonly>
+													</div>
+													<div class="form-group">
+														<label class="control-label" for="phone-2">Alternate Phone</label>
+														<input type="tel" class="form-control" id="phone-2" name="phone-2" placeholder="Alternate Phone">
+													</div>
+													<div class="form-group">
+														<label class="control-label" for="email">Email</label>
+														<input type="email" class="form-control-plaintext" id="email" name="email" placeholder="Email" value="example@abc.com" readonly>
+													</div>
+													<div class="form-group">
+														<label class="control-label" for="email-2">Alternate Email</label>
+														<input type="email" class="form-control" id="email-2" name="email-2" placeholder="Alternate Email">
+													</div>
+													<!-- <div class="form-group has-error has-feedback">
 														<label class="control-label" for="email">Email</label>
 														<input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
 														<span class="fa fa-remove form-control-feedback"></span>
-													</div>							
-													<button  type="submit" class="btn btn-primary">Submit</button>
-													<input type="hidden" name="jportal_profile_edit" value="<?php echo wp_create_nonce('jportal-profile-edit-nonce'); ?>"/>
+													</div>
+													<div class="form-group">
+														<label class="control-label" for="email">Email</label>
+														<input type="email" class="form-control  is-invalid" id="email" name="email" placeholder="Email" required>
+														<div class="invalid-feedback">Please provide a valid city.</div>
+													</div>
+													<div class="form-group">
+														<label class="control-label" for="email">Email</label>
+														<input type="email" class="form-control  is-valid" id="email" name="email" placeholder="Email" required>
+														<div class="invalid-feedback">Please provide a valid city.</div>
+													</div> -->							
 												</div>
-											</div>	
+											</div>
+											<button  type="submit" class="btn btn-primary">Save</button>
+											<button type="button" class="btn btn-dark">Close</button>
+											<input type="hidden" name="jportal_profile_edit" value="<?php echo wp_create_nonce('jportal-profile-edit-nonce'); ?>"/>	
 										</div>
 									</div>
 								</div>
