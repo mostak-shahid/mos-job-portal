@@ -139,7 +139,7 @@ if (!function_exists('jportal_edit_profile_content')) {
 
 									<div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#personal-tab-accordion">
 										<div class="card-body">
-											<div class="edit-btn-wrapper text-right"><button class="btn btn-light btn-sm"><i class="fa fa-edit"></i> Edit</button></div>
+											<!-- <div class="edit-btn-wrapper text-right"><button class="btn btn-light btn-sm"><i class="fa fa-edit"></i> Edit</button></div> -->
 											<div class="row">
 												<div class="col-lg-6">
 													<div class="form-group">
@@ -232,7 +232,7 @@ if (!function_exists('jportal_edit_profile_content')) {
 												</div>
 											</div>
 											<button  type="submit" class="btn btn-primary">Save</button>
-											<button type="button" class="btn btn-dark">Close</button>
+											<!-- <button type="button" class="btn btn-dark">Close</button> -->
 											<input type="hidden" name="jportal_profile_edit" value="<?php echo wp_create_nonce('jportal-profile-edit-nonce'); ?>"/>	
 										</div>
 									</div>
@@ -241,13 +241,32 @@ if (!function_exists('jportal_edit_profile_content')) {
 									<div class="card-header" id="headingTwo">
 										<h5 class="mb-0">
 											<a href="javascript:void(0)" class="collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-												Collapsible Group Item #2
+												Address Details
 											</a>
 										</h5>
 									</div>
 									<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#personal-tab-accordion">
 										<div class="card-body">
-											Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+											<div class="row">
+												<div class="col-lg-6">
+													<h6>Present Address</h6>
+													<div class="form-group">
+														<input type="text" class="form-control" id="present_address_1" name="present_address_1" placeholder="Address Line 1">   
+													</div>
+													<div class="form-group">
+														<input type="text" class="form-control" id="present_address_2" name="present_address_2" placeholder="Address Line 2">   
+													</div>
+												</div>
+												<div class="col-lg-6">
+													<h6>Permanent Address</h6>
+													<div class="form-group">
+														<input type="text" class="form-control" id="permanent_address_1" name="permanent_address_1" placeholder="Address Line 1">   
+													</div>
+													<div class="form-group">
+														<input type="text" class="form-control" id="permanent_address_2" name="permanent_address_2" placeholder="Address Line 2">   
+													</div>
+												</div>
+											</div>
 										</div>
 									</div>
 								</div>

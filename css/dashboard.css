@@ -1,4 +1,5 @@
 a:hover,a:focus{text-decoration: none;}
+.form-control-plaintext:focus {outline: none; }
 .mb0{margin-bottom: 0;}
 .card-body .wrapper-info{padding: 5px;border-radius: 3px}
 .card-body .wrapper-info >*:last-child{margin-bottom: 0;}
